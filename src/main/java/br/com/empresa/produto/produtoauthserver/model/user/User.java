@@ -5,8 +5,6 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,12 +17,13 @@ import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-@Document
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Getter
 @Setter
+@ToString
 public class User implements UserDetails {
 
 	/**
@@ -33,7 +32,7 @@ public class User implements UserDetails {
 	private static final long serialVersionUID = 8143826185541283249L;
 
 	@JsonSerialize(using = ToStringSerializer.class)
-	private ObjectId id;
+	private String id = null;
 	private final String username;
 	private final String firstname;
 	private final String lastname;
@@ -44,7 +43,7 @@ public class User implements UserDetails {
 	private final Date lastPasswordResetDate;
 
 	@JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-	public User(ObjectId id, String username, String firstname, String lastname, String email, String password,
+	public User(String id, String username, String firstname, String lastname, String email, String password,
 			List<String> roles, boolean enabled, Date lastPasswordResetDate) {
 		this.id = id;
 		this.username = username;
@@ -57,7 +56,7 @@ public class User implements UserDetails {
 		this.lastPasswordResetDate = lastPasswordResetDate;
 		this.roles = roles;
 	}
-
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> authorities = new ArrayList<>(this.roles.size());
