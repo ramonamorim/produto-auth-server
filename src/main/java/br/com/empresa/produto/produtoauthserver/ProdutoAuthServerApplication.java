@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.reactive.EnableWebFlux
 @SpringBootApplication
 @EnableWebFluxSecurity
 public class ProdutoAuthServerApplication {
-
+ 
 	public static void main(String[] args) {
 		SpringApplication.run(ProdutoAuthServerApplication.class, args);
 	}
