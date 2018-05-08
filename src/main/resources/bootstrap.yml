@@ -4,9 +4,27 @@ spring:
   cloud: 
     config: 
       uri: http://localhost:9090  
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+jwt:
+  header: Authorization
+  param: token
+  secret: m6sXDUKZSY154e9N
+  expiration: 604800000
+  prefix: Bearer
+  route:
+    authentication:
+      path: auth
+      token: token
+      refresh: refresh      
       
-      
-      
+logging:
+  level:
+    org.springframework:
+      security: DEBUG
+      data: DEBUG      
       
       
       
