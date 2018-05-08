@@ -3,7 +3,7 @@ spring:
     name: produto-auth-server 
   cloud: 
     config: 
-      uri: htt://localhost:9090 
+      uri: http://localhost:9090  
       
       
       
