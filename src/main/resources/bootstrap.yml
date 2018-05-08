@@ -1,0 +1,12 @@
+spring: 
+  application: 
+    name: produto-auth-server 
+  cloud: 
+    config: 
+      uri: htt://localhost:9090 
+      
+      
+      
+      
+      
+      
