@@ -1,0 +1,31 @@
+spring: 
+  jackson: 
+    serialization: 
+      INDENT_OUTPUT: true 
+  data: 
+    mongodb: 
+      host: localhost
+      port: 27017 
+      database: mongodb 
+      
+      
+jwt: 
+  header: Authorization 
+  param: token 
+  secret: m6sXDUKZSY154e9N 
+  expiration: 604800000 
+  prefix: Bearer 
+  route: 
+    authentication: 
+      path: auth 
+      token: token 
+      refresh: refresh       
+      
+logging: 
+  level: 
+    org.springframework: 
+      security: DEBUG 
+      data: DEBUG       
+      
+      
+            

@@ -1,4 +1,4 @@
-package br.com.empresa.produto.produtoauthserver.api;
+package br.com.empresa.produto.produtoauthserver;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
