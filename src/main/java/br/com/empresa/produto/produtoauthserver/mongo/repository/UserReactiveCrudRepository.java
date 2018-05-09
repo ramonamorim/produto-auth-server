@@ -1,6 +1,5 @@
 package br.com.empresa.produto.produtoauthserver.mongo.repository;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;

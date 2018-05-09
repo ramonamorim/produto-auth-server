@@ -1,5 +1,7 @@
 package br.com.empresa.produto.produtoauthserver.security.jsonwebtoken;
 
+import java.util.function.Function;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,10 +13,9 @@ import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.springframework.web.server.ServerWebExchange;
+
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
-
-import java.util.function.Function;
 
 @Component
 public class CustomAuthenticationConverter implements Function<ServerWebExchange, Mono<Authentication>> {

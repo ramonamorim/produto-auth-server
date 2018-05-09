@@ -1,7 +1,6 @@
 package br.com.empresa.produto.produtoauthserver.mongo.config;
 
 import java.util.Arrays;
-import java.util.Date;
 import java.util.UUID;
 
 import org.springframework.boot.CommandLineRunner;

@@ -1,10 +1,10 @@
 package br.com.empresa.produto.produtoauthserver.security.jsonwebtoken;
 
-import org.springframework.security.crypto.bcrypt.BCrypt;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
 import java.security.SecureRandom;
 import java.util.Base64;
+
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class CustomPasswordEncoder implements PasswordEncoder {
     @Override
